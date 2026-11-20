@@ -1,0 +1,276 @@
+/*
+ * Fondations du design system : polices, base, styles typographiques, utilitaires.
+ * Pas de composants : uniquement des classes qui appliquent les tokens.
+ * À charger après dist/tokens.css.
+ */
+
+/* ---------- Polices ---------- */
+/* Recia n'existe qu'en italique : on la déclare pour les deux styles,
+   ce qui évite que le navigateur fabrique un faux italique. */
+@font-face {
+  font-family: Recia;
+  src: url("../fonts/Recia-VariableItalic.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Recia;
+  src: url("../fonts/Recia-VariableItalic.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Synonym;
+  src: url("../fonts/Synonym-Variable.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Base ---------- */
+.ds {
+  background: var(--ds-background);
+  color: var(--ds-foreground);
+  font-family: var(--ds-text-family);
+  font-weight: var(--ds-text-weight);
+  font-size: var(--ds-text-size);
+  line-height: var(--ds-text-leading);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* Pas de mot seul en fin de paragraphe, titres équilibrés */
+.ds p, .ds li, .ds blockquote { text-wrap: pretty; }
+.ds h1, .ds h2, .ds h3 { text-wrap: balance; }
+.ds ::selection { background: var(--ds-jaune); color: var(--ds-ink); }
+.ds :focus-visible { outline: var(--ds-stroke-action) solid var(--ds-cta); outline-offset: 3px; }
+
+/* ---------- Styles typographiques ---------- */
+.ds-display, .ds-headline, .ds-accent, .ds-title, .ds-quote, .ds-intro,
+.ds-heading, .ds-subtitle, .ds-action, .ds-text, .ds-caption, .ds-label, .ds-numeral {
+  margin: 0;
+}
+.ds-display  { font: var(--ds-display-style)  var(--ds-display-weight)  var(--ds-display-size)/var(--ds-display-leading)   var(--ds-display-family);  letter-spacing: var(--ds-display-tracking); }
+.ds-headline { font: var(--ds-headline-style) var(--ds-headline-weight) var(--ds-headline-size)/var(--ds-headline-leading) var(--ds-headline-family); letter-spacing: var(--ds-headline-tracking); }
+.ds-accent   { font: var(--ds-accent-style)   var(--ds-accent-weight)   var(--ds-accent-size)/var(--ds-accent-leading)     var(--ds-accent-family);   letter-spacing: var(--ds-accent-tracking); }
+.ds-title    { font: var(--ds-title-style)    var(--ds-title-weight)    var(--ds-title-size)/var(--ds-title-leading)       var(--ds-title-family);    letter-spacing: var(--ds-title-tracking); }
+.ds-quote    { font: var(--ds-quote-style)    var(--ds-quote-weight)    var(--ds-quote-size)/var(--ds-quote-leading)       var(--ds-quote-family);    letter-spacing: var(--ds-quote-tracking); }
+.ds-intro    { font: var(--ds-intro-style)    var(--ds-intro-weight)    var(--ds-intro-size)/var(--ds-intro-leading)       var(--ds-intro-family);    letter-spacing: var(--ds-intro-tracking); }
+.ds-heading  { font: var(--ds-heading-style)  var(--ds-heading-weight)  var(--ds-heading-size)/var(--ds-heading-leading)   var(--ds-heading-family);  letter-spacing: var(--ds-heading-tracking); }
+.ds-subtitle { font: var(--ds-subtitle-style) var(--ds-subtitle-weight) var(--ds-subtitle-size)/var(--ds-subtitle-leading) var(--ds-subtitle-family); letter-spacing: var(--ds-subtitle-tracking); }
+.ds-action   { font: var(--ds-action-style)   var(--ds-action-weight)   var(--ds-action-size)/var(--ds-action-leading)     var(--ds-action-family);   letter-spacing: var(--ds-action-tracking); }
+.ds-text     { font: var(--ds-text-style)     var(--ds-text-weight)     var(--ds-text-size)/var(--ds-text-leading)         var(--ds-text-family);     letter-spacing: var(--ds-text-tracking); }
+.ds-caption  { font: var(--ds-caption-style)  var(--ds-caption-weight)  var(--ds-caption-size)/var(--ds-caption-leading)   var(--ds-caption-family);  letter-spacing: var(--ds-caption-tracking); }
+.ds-label    { font: var(--ds-label-style)    var(--ds-label-weight)    var(--ds-label-size)/var(--ds-label-leading)       var(--ds-label-family);    letter-spacing: var(--ds-label-tracking); }
+.ds-numeral  { font: var(--ds-numeral-style)  var(--ds-numeral-weight)  var(--ds-numeral-size)/var(--ds-numeral-leading)   var(--ds-numeral-family);  letter-spacing: var(--ds-numeral-tracking); color: color-mix(in srgb, var(--ds-muted) 75%, transparent); }
+
+/* Dans un chapô, les mots clés passent en graisse moyenne */
+.ds-intro strong, .ds-quote strong { font-weight: var(--ds-weight-medium); }
+/* Un accent dans un grand titre se met en ligne propre */
+.ds-headline .ds-accent { display: block; }
+
+/* ---------- Utilitaires ---------- */
+.ds-upper   { text-transform: uppercase; }
+.ds-muted   { color: var(--ds-muted); }
+.ds-ink     { color: var(--ds-foreground); }
+.ds-actioncolor { color: var(--ds-cta); }
+.ds-balance { text-wrap: balance; }
+.ds-measure { max-width: 62ch; }
+
+.ds-surface-panel { background: var(--ds-panel); --ds-tag-bg: var(--ds-panel); }
+.ds-surface-tag   { background: var(--ds-tag); --ds-tag-bg: var(--ds-tag); }
+.ds-surface-night { background: var(--ds-background); color: var(--ds-foreground); }
+
+.ds-rule        { border: 0; border-top: var(--ds-stroke-hairline) solid var(--ds-line); margin: 0; }
+.ds-rule-strong { border: 0; border-top: var(--ds-stroke-hairline) solid var(--ds-foreground); margin: 0; }
+.ds-outline     { border: var(--ds-stroke-hairline) solid var(--ds-foreground); }
+.ds-outline-action { border: var(--ds-stroke-action) solid var(--ds-cta); }
+
+.ds-pill { border-radius: var(--ds-radius-round); }
+.ds-card { border-radius: var(--ds-radius-card); }
+
+/* Un seul style de lien : souligné fin, le trait se redessine au survol */
+.ds-link {
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) left bottom / 100% var(--ds-stroke-hairline) no-repeat;
+  padding-bottom: 0.08em;
+}
+.ds-link:hover { animation: ds-redraw var(--ds-motion-standard) var(--ds-motion-easing); }
+@keyframes ds-redraw { from { background-size: 0% var(--ds-stroke-hairline); } }
+
+/* Figurines isométriques (assets/figurines) : décor posé dans les marges */
+.ds-figurine {
+  height: var(--ds-figurine-size);
+  width: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+/* Grande figurine : seulement pour illustrer un état vide ou une erreur (web) */
+.ds-figurine.ds-figurine-lg { height: calc(var(--ds-figurine-size) * 1.9); }
+
+/* ---------- Interaction (principes tasteskill) ----------
+ * Tout ce qui est cliquable répond au pointeur. Rien ne bouge au défilement.
+ */
+.ds-press { transition: transform var(--ds-motion-quick) var(--ds-motion-easing), background-color var(--ds-motion-quick) var(--ds-motion-easing), color var(--ds-motion-quick) var(--ds-motion-easing); }
+.ds-press:hover { transform: translateY(var(--ds-step)); }
+.ds-press:active { transform: translateY(0) scale(var(--ds-press)); }
+
+.ds-lift { transition: transform var(--ds-motion-standard) var(--ds-motion-easing); }
+.ds-lift:hover { transform: translateY(var(--ds-lift)); }
+
+/* Cadre photo : la photo remplit le cadre et zoome légèrement au survol d'un lien parent */
+.ds-photo { display: block; overflow: hidden; border-radius: var(--ds-radius-card); background: var(--ds-panel); }
+.ds-photo > img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--ds-motion-slow) var(--ds-motion-easing); }
+a:hover .ds-photo > img, a.ds-photo:hover > img { transform: scale(var(--ds-photo-zoom)); }
+
+/* Zone tactile : tout ce qui est cliquable fait au moins 44 × 44 px */
+.ds-target { display: inline-flex; align-items: center; justify-content: center; min-height: var(--ds-touch-target); min-width: var(--ds-touch-target); }
+.ds-link.ds-target { display: inline-block; min-height: 0; padding-block: max(0px, calc((var(--ds-touch-target) - 1lh) / 2 + 0.5px)); background-origin: content-box; background-clip: content-box; }
+
+/* Emplacement en attente : il a la forme du contenu qui arrive */
+.ds-skeleton { background: var(--ds-panel); border-radius: var(--ds-radius-card); animation: ds-wait 2.8s var(--ds-motion-easing) infinite; }
+.ds-skeleton-line { display: block; height: 0.8em; margin: 0.4em 0; }
+@keyframes ds-wait { 50% { opacity: 0.55; } }
+
+/* Coche de confirmation qui se dessine après une action réussie */
+.ds-check { width: 1.2em; height: 1.2em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ds-check path { stroke-dasharray: 24; stroke-dashoffset: 24; animation: ds-draw var(--ds-motion-slow) var(--ds-motion-easing) forwards; }
+@keyframes ds-draw { to { stroke-dashoffset: 0; } }
+
+/* Icône réelle d'un outil, à la taille du texte */
+.ds-icon { height: 1.15em; width: auto; vertical-align: -0.2em; }
+
+/* ---------- Mise en page web ---------- */
+/* Bords gauche et droit égaux pour tout le contenu */
+.ds-wrap { width: 100%; max-width: calc(var(--ds-web-max-width) + 2 * var(--ds-web-gutter)); margin-inline: auto; padding-inline: var(--ds-web-gutter); box-sizing: border-box; min-width: 0; }
+/* Une section = un écran (deux au plus) */
+.ds-screen { min-height: 100svh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding-block: var(--ds-space-8); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds *, .ds *::before, .ds *::after { animation: none !important; transition: none !important; }
+  .ds-check path { stroke-dashoffset: 0; }
+  .ds-press:hover, .ds-press:active, .ds-lift:hover, a:hover .ds-photo > img, a.ds-photo:hover > img { transform: none; }
+}
+
+/* Empilement vertical régulier */
+.ds-stack > * + * { margin-top: var(--ds-stack-gap, var(--ds-space-4)); }
+
+/* ---------- Motif : titre à étiquettes ----------
+ * Un grand titre entouré d'étiquettes en pilule qui chevauchent légèrement les lettres.
+ * Règles d'usage : docs/regles-de-conception.md
+ *
+ * <div class="ds-tagged">
+ *   <h2 class="ds-headline">Rien de grand <span class="ds-accent">ne se fait seul.</span></h2>
+ *   <span class="ds-tag" style="--x: 6%; --y: 18%">Recherche</span>
+ *   …
+ * </div>
+ *
+ * --x / --y : position du centre de l'étiquette, en % du bloc.
+ */
+.ds-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: var(--ds-tag-padding-y) var(--ds-tag-padding-x);
+  border: var(--ds-stroke-hairline) solid currentColor;
+  border-radius: var(--ds-radius-round);
+  background: var(--ds-tag-bg, var(--ds-background)); /* masque les lettres qu’elle chevauche */
+  color: inherit;
+  font: normal var(--ds-tag-weight) var(--ds-tag-size)/1 var(--ds-font-sans);
+  letter-spacing: var(--ds-tag-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ds-tag::before { content: var(--ds-tag-prefix); }
+.ds-tag.ds-tag-bare::before { content: none; }
+
+.ds-tagged {
+  position: relative;
+  display: inline-block;
+  color: var(--ds-tagged-color, var(--ds-foreground));
+  /* marge intérieure pour que les étiquettes en bordure ne sortent pas du bloc */
+  padding: calc(var(--ds-tag-size) * 2.2) calc(var(--ds-tag-size) * 3);
+}
+.ds-tagged > :not(.ds-tag) { position: relative; color: inherit; }
+.ds-tagged > .ds-tag {
+  position: absolute;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+/* Variante centrée, comme une affiche */
+.ds-tagged.ds-tagged-center { display: table; margin-inline: auto; text-align: center; }
+
+/* Écrans étroits : les étiquettes quittent le titre et se rangent dessous */
+@media (max-width: 640px) {
+  [data-context="web"] .ds-tagged, :root:not([data-context]) .ds-tagged {
+    display: flex; flex-wrap: wrap; gap: var(--ds-space-2); padding: 0;
+  }
+  [data-context="web"] .ds-tagged > :not(.ds-tag), :root:not([data-context]) .ds-tagged > :not(.ds-tag) { flex-basis: 100%; margin-bottom: var(--ds-space-3); }
+  [data-context="web"] .ds-tagged > .ds-tag, :root:not([data-context]) .ds-tagged > .ds-tag { position: static; transform: none; }
+}
+
+/* ---------- Matières : textures et formes ----------
+ * Règles d'usage : docs/regles-de-conception.md, section « Matières ».
+ */
+/* Textures générées (grain façon risographie, papier fibreux), posées par-dessus le contenu comme une encre sur papier */
+.ds-texture-grain, .ds-texture-papier { position: relative; isolation: isolate; }
+.ds-texture-papier::before, .ds-texture-grain::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; z-index: 1;
+}
+.ds-texture-papier::before { background: var(--ds-texture-papier); opacity: var(--ds-texture-papier-opacity); mix-blend-mode: var(--ds-texture-papier-blend); }
+.ds-texture-grain::after   { background: var(--ds-texture-grain);  opacity: var(--ds-texture-grain-opacity);  mix-blend-mode: var(--ds-texture-grain-blend); }
+
+/* Formes organiques découpées (assets/formes) : elles prennent la couleur du texte (currentColor) */
+.ds-forme {
+  display: block;
+  background-color: currentColor;
+  -webkit-mask: center / contain no-repeat;
+  mask: center / contain no-repeat;
+  pointer-events: none;
+}
+.ds-forme-galet   { -webkit-mask-image: url("../assets/formes/galet.svg");   mask-image: url("../assets/formes/galet.svg");   aspect-ratio: 200 / 260; }
+.ds-forme-feuille { -webkit-mask-image: url("../assets/formes/feuille.svg"); mask-image: url("../assets/formes/feuille.svg"); aspect-ratio: 1; }
+.ds-forme-fil     { -webkit-mask-image: url("../assets/formes/fil.svg");     mask-image: url("../assets/formes/fil.svg");     aspect-ratio: 400 / 300; }
+
+/* Formes de la galerie (assets/formes, d'après shapes.gallery) : forme pleine ou découpe de photo */
+.ds-forme-couronne, .ds-decoupe-couronne { -webkit-mask-image: url("../assets/formes/couronne.svg"); mask-image: url("../assets/formes/couronne.svg"); aspect-ratio: 1; }
+.ds-forme-fleur, .ds-decoupe-fleur { -webkit-mask-image: url("../assets/formes/fleur.svg"); mask-image: url("../assets/formes/fleur.svg"); aspect-ratio: 1; }
+.ds-forme-petales, .ds-decoupe-petales { -webkit-mask-image: url("../assets/formes/petales.svg"); mask-image: url("../assets/formes/petales.svg"); aspect-ratio: 1; }
+.ds-forme-boucle, .ds-decoupe-boucle { -webkit-mask-image: url("../assets/formes/boucle.svg"); mask-image: url("../assets/formes/boucle.svg"); aspect-ratio: 1; }
+.ds-forme-nuage, .ds-decoupe-nuage { -webkit-mask-image: url("../assets/formes/nuage.svg"); mask-image: url("../assets/formes/nuage.svg"); aspect-ratio: 1; }
+.ds-forme-empilement, .ds-decoupe-empilement { -webkit-mask-image: url("../assets/formes/empilement.svg"); mask-image: url("../assets/formes/empilement.svg"); aspect-ratio: 1; }
+.ds-forme-tulipe, .ds-decoupe-tulipe { -webkit-mask-image: url("../assets/formes/tulipe.svg"); mask-image: url("../assets/formes/tulipe.svg"); aspect-ratio: 1; }
+.ds-forme-papillon, .ds-decoupe-papillon { -webkit-mask-image: url("../assets/formes/papillon.svg"); mask-image: url("../assets/formes/papillon.svg"); aspect-ratio: 1; }
+.ds-forme-coussin, .ds-decoupe-coussin { -webkit-mask-image: url("../assets/formes/coussin.svg"); mask-image: url("../assets/formes/coussin.svg"); aspect-ratio: 1; }
+.ds-forme-trefle, .ds-decoupe-trefle { -webkit-mask-image: url("../assets/formes/trefle.svg"); mask-image: url("../assets/formes/trefle.svg"); aspect-ratio: 1; }
+.ds-forme-helice, .ds-decoupe-helice { -webkit-mask-image: url("../assets/formes/helice.svg"); mask-image: url("../assets/formes/helice.svg"); aspect-ratio: 1; }
+.ds-forme-marguerite, .ds-decoupe-marguerite { -webkit-mask-image: url("../assets/formes/marguerite.svg"); mask-image: url("../assets/formes/marguerite.svg"); aspect-ratio: 1; }
+.ds-forme-etoile, .ds-decoupe-etoile { -webkit-mask-image: url("../assets/formes/etoile.svg"); mask-image: url("../assets/formes/etoile.svg"); aspect-ratio: 1; }
+.ds-forme-graine, .ds-decoupe-graine { -webkit-mask-image: url("../assets/formes/graine.svg"); mask-image: url("../assets/formes/graine.svg"); aspect-ratio: 1; }
+.ds-decoupe-couronne, .ds-decoupe-fleur, .ds-decoupe-petales, .ds-decoupe-boucle, .ds-decoupe-nuage, .ds-decoupe-empilement, .ds-decoupe-tulipe, .ds-decoupe-papillon, .ds-decoupe-coussin, .ds-decoupe-trefle, .ds-decoupe-helice, .ds-decoupe-marguerite, .ds-decoupe-etoile, .ds-decoupe-graine { -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; border-radius: 0; }
+
+/* ---------- Composition libre ----------
+ * Règles d'usage : docs/regles-de-conception.md, section « Composition ».
+ */
+/* Découpe : une photo (ou tout bloc) prend la silhouette d'une forme */
+.ds-decoupe-galet, .ds-decoupe-feuille { -webkit-mask: center / 100% 100% no-repeat; mask: center / 100% 100% no-repeat; border-radius: 0; }
+.ds-decoupe-galet   { -webkit-mask-image: url("../assets/formes/galet.svg");   mask-image: url("../assets/formes/galet.svg");   aspect-ratio: 200 / 260; }
+.ds-decoupe-feuille { -webkit-mask-image: url("../assets/formes/feuille.svg"); mask-image: url("../assets/formes/feuille.svg"); aspect-ratio: 1; }
+
+/* Note papier posée : fond lin, encre écorce, épinglée par une pastille */
+.ds-note {
+  position: relative; box-sizing: border-box;
+  background: var(--ds-lin); color: var(--ds-ecorce);
+  border-radius: var(--ds-radius-card); padding: var(--ds-space-5) var(--ds-space-5) var(--ds-space-4);
+  --ds-muted: rgba(75, 42, 32, 0.72); --ds-background: var(--ds-lin); --ds-line: rgba(75, 42, 32, 0.2);
+}
+.ds-note::before {
+  content: ""; position: absolute; top: calc(var(--ds-space-2) * -1); left: 50%; translate: -50% 0;
+  width: 14px; height: 14px; border-radius: 50%; background: var(--ds-pin, var(--ds-souci));
+}
+

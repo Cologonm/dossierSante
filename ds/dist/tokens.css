@@ -1,0 +1,301 @@
+/* Généré par scripts/build.mjs depuis tokens/tokens.json. Ne pas modifier à la main. */
+
+:root {
+  --ds-paper: #fbfbf9;
+  --ds-kraft: #ece2cf;
+  --ds-ink: #1c1c1a;
+  --ds-crayon: #5f5f5a;
+  --ds-ardoise: #4d7290;
+  --ds-brume: #e8edf1;
+  --ds-night: #1c1c1a;
+  --ds-action: #c43f1c;
+  --ds-corail: #ec8f78;
+  --ds-lichen: #a9b45f;
+  --ds-sable: #e3c99b;
+  --ds-jaune: #f3d23b;
+  --ds-creme: #fff5eb;
+  --ds-souci: #faaa1d;
+  --ds-herbe: #5a9328;
+  --ds-mandarine: #fa631e;
+  --ds-ciel: #73abe6;
+  --ds-rose: #fd8296;
+  --ds-foret: #2b5a46;
+  --ds-sapin: #1d3f31;
+  --ds-mousse: #6b7a49;
+  --ds-feuille: #2f7d4f;
+  --ds-tilleul: #d8f08c;
+  --ds-lin: #f3efe3;
+  --ds-ecorce: #4b2a20;
+  --ds-font-serif: Recia, Georgia, serif;
+  --ds-font-sans: Synonym, "Helvetica Neue", Arial, sans-serif;
+  --ds-weight-light: 300;
+  --ds-weight-text: 450;
+  --ds-weight-medium: 500;
+  --ds-radius-none: 0px;
+  --ds-radius-card: 4px;
+  --ds-radius-round: 999px;
+  --ds-stroke-hairline: 1px;
+  --ds-stroke-hand: 1.4px;
+  --ds-stroke-action: 1.8px;
+  --ds-shadow-figurine: 0px 2px 1px rgba(28, 28, 26, 0.2);
+  --ds-motion-quick: 0.15s;
+  --ds-motion-standard: 0.38s;
+  --ds-motion-slow: 0.5s;
+  --ds-motion-celebrate: 1s;
+  --ds-motion-easing: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --ds-tag-weight: 450;
+  --ds-tag-tracking: 0.06em;
+  --ds-tag-padding-x: 1.05em;
+  --ds-tag-padding-y: 0.5em;
+  --ds-tag-prefix: "+";
+  --ds-print-margin: 18mm;
+  --ds-web-max-width: 1280px;
+  --ds-web-gutter: clamp(20px, 5.5vw, 80px);
+  --ds-lift: -2px;
+  --ds-photo-zoom: 1.025;
+  --ds-step: -1px;
+  --ds-press: 0.97;
+  --ds-touch-target: 44px;
+  --ds-social-margin: 88px;
+  --ds-display-family: var(--ds-font-serif);
+  --ds-display-weight: 400;
+  --ds-display-style: italic;
+  --ds-display-leading: 0.8;
+  --ds-display-tracking: -0.03em;
+  --ds-headline-family: var(--ds-font-sans);
+  --ds-headline-weight: 450;
+  --ds-headline-style: normal;
+  --ds-headline-leading: 0.98;
+  --ds-headline-tracking: -0.045em;
+  --ds-accent-family: var(--ds-font-serif);
+  --ds-accent-weight: 400;
+  --ds-accent-style: italic;
+  --ds-accent-leading: 1;
+  --ds-accent-tracking: -0.02em;
+  --ds-title-family: var(--ds-font-serif);
+  --ds-title-weight: 400;
+  --ds-title-style: italic;
+  --ds-title-leading: 0.9;
+  --ds-title-tracking: -0.03em;
+  --ds-quote-family: var(--ds-font-serif);
+  --ds-quote-weight: 300;
+  --ds-quote-style: italic;
+  --ds-quote-leading: 1.15;
+  --ds-quote-tracking: -0.02em;
+  --ds-intro-family: var(--ds-font-serif);
+  --ds-intro-weight: 300;
+  --ds-intro-style: italic;
+  --ds-intro-leading: 1.12;
+  --ds-intro-tracking: -0.025em;
+  --ds-heading-family: var(--ds-font-serif);
+  --ds-heading-weight: 300;
+  --ds-heading-style: italic;
+  --ds-heading-leading: 1.1;
+  --ds-heading-tracking: -0.02em;
+  --ds-subtitle-family: var(--ds-font-serif);
+  --ds-subtitle-weight: 400;
+  --ds-subtitle-style: italic;
+  --ds-subtitle-leading: 1.25;
+  --ds-subtitle-tracking: 0;
+  --ds-action-family: var(--ds-font-serif);
+  --ds-action-weight: 400;
+  --ds-action-style: italic;
+  --ds-action-leading: 1.55;
+  --ds-action-tracking: 0;
+  --ds-text-family: var(--ds-font-sans);
+  --ds-text-weight: 450;
+  --ds-text-style: normal;
+  --ds-text-leading: 1.6;
+  --ds-text-tracking: 0;
+  --ds-caption-family: var(--ds-font-sans);
+  --ds-caption-weight: 450;
+  --ds-caption-style: normal;
+  --ds-caption-leading: 1.45;
+  --ds-caption-tracking: 0;
+  --ds-label-family: var(--ds-font-sans);
+  --ds-label-weight: 500;
+  --ds-label-style: normal;
+  --ds-label-leading: 1.6;
+  --ds-label-tracking: 0.02em;
+  --ds-numeral-family: var(--ds-font-serif);
+  --ds-numeral-weight: 400;
+  --ds-numeral-style: italic;
+  --ds-numeral-leading: 0.8;
+  --ds-numeral-tracking: 0;
+  --ds-background: var(--ds-paper);
+  --ds-foreground: var(--ds-ink);
+  --ds-muted: var(--ds-crayon);
+  --ds-panel: var(--ds-brume);
+  --ds-tag: var(--ds-kraft);
+  --ds-line: rgba(28, 28, 26, 0.16);
+  --ds-cta: var(--ds-action);
+  --ds-display-size: clamp(120px, 19vw, 280px);
+  --ds-headline-size: clamp(48px, 7vw, 101px);
+  --ds-accent-size: 0.94em;
+  --ds-title-size: clamp(56px, 7.8vw, 112px);
+  --ds-quote-size: clamp(30px, 3.6vw, 52px);
+  --ds-intro-size: clamp(32px, 4.2vw, 60px);
+  --ds-heading-size: clamp(28px, 3vw, 44px);
+  --ds-subtitle-size: 26px;
+  --ds-action-size: 18px;
+  --ds-text-size: 17px;
+  --ds-caption-size: 14px;
+  --ds-label-size: 13px;
+  --ds-numeral-size: 120px;
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 24px;
+  --ds-space-6: 32px;
+  --ds-space-7: 48px;
+  --ds-space-8: 64px;
+  --ds-space-9: 96px;
+  --ds-figurine-size: 44px;
+  --ds-tag-size: 13px;
+}
+
+/* Thème nuit : sections sombres, pied de page */
+
+.ds-night, [data-theme="night"] {
+  --ds-background: var(--ds-night);
+  --ds-foreground: var(--ds-paper);
+  --ds-muted: rgba(251, 251, 249, 0.68);
+  --ds-panel: #2a2a27;
+  --ds-tag: #3a352c;
+  --ds-line: rgba(251, 251, 249, 0.18);
+  --ds-cta: var(--ds-corail);
+}
+
+.ds-foret, [data-theme="foret"] {
+  --ds-background: var(--ds-foret);
+  --ds-foreground: var(--ds-lin);
+  --ds-muted: rgba(243, 239, 227, 0.74);
+  --ds-panel: var(--ds-sapin);
+  --ds-tag: var(--ds-sapin);
+  --ds-line: rgba(216, 240, 140, 0.45);
+  --ds-cta: var(--ds-tilleul);
+}
+
+/* Textures */
+
+:root {
+  --ds-texture-grain: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'260'%20height%3D'260'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.85'%20numOctaves%3D'2'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'saturate'%20values%3D'0'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20filter%3D'url(%23n)'%2F%3E%3C%2Fsvg%3E");
+  --ds-texture-grain-opacity: 0.45;
+  --ds-texture-grain-blend: overlay;
+  --ds-texture-papier: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'2000'%20height%3D'2000'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.006'%20numOctaves%3D'5'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'saturate'%20values%3D'0'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20filter%3D'url(%23n)'%2F%3E%3C%2Fsvg%3E");
+  --ds-texture-papier-opacity: 0.6;
+  --ds-texture-papier-blend: soft-light;
+}
+
+/* Contextes : changent l'échelle typographique et les espacements */
+
+[data-context="web"] {
+  --ds-display-size: clamp(120px, 19vw, 280px);
+  --ds-headline-size: clamp(48px, 7vw, 101px);
+  --ds-accent-size: 0.94em;
+  --ds-title-size: clamp(56px, 7.8vw, 112px);
+  --ds-quote-size: clamp(30px, 3.6vw, 52px);
+  --ds-intro-size: clamp(32px, 4.2vw, 60px);
+  --ds-heading-size: clamp(28px, 3vw, 44px);
+  --ds-subtitle-size: 26px;
+  --ds-action-size: 18px;
+  --ds-text-size: 17px;
+  --ds-caption-size: 14px;
+  --ds-label-size: 13px;
+  --ds-numeral-size: 120px;
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 24px;
+  --ds-space-6: 32px;
+  --ds-space-7: 48px;
+  --ds-space-8: 64px;
+  --ds-space-9: 96px;
+  --ds-figurine-size: 44px;
+  --ds-tag-size: 13px;
+}
+
+[data-context="social"] {
+  --ds-display-size: 260px;
+  --ds-headline-size: 120px;
+  --ds-accent-size: 0.94em;
+  --ds-title-size: 110px;
+  --ds-quote-size: 64px;
+  --ds-intro-size: 56px;
+  --ds-heading-size: 52px;
+  --ds-subtitle-size: 36px;
+  --ds-action-size: 30px;
+  --ds-text-size: 30px;
+  --ds-caption-size: 24px;
+  --ds-label-size: 22px;
+  --ds-numeral-size: 180px;
+  --ds-space-1: 8px;
+  --ds-space-2: 16px;
+  --ds-space-3: 24px;
+  --ds-space-4: 32px;
+  --ds-space-5: 48px;
+  --ds-space-6: 64px;
+  --ds-space-7: 96px;
+  --ds-space-8: 128px;
+  --ds-space-9: 192px;
+  --ds-figurine-size: 84px;
+  --ds-tag-size: 24px;
+}
+
+[data-context="print"] {
+  --ds-display-size: 96pt;
+  --ds-headline-size: 40pt;
+  --ds-accent-size: 0.94em;
+  --ds-title-size: 32pt;
+  --ds-quote-size: 20pt;
+  --ds-intro-size: 18pt;
+  --ds-heading-size: 16pt;
+  --ds-subtitle-size: 12pt;
+  --ds-action-size: 10pt;
+  --ds-text-size: 9.5pt;
+  --ds-caption-size: 8pt;
+  --ds-label-size: 7.5pt;
+  --ds-numeral-size: 48pt;
+  --ds-space-1: 2.4pt;
+  --ds-space-2: 4.8pt;
+  --ds-space-3: 7.2pt;
+  --ds-space-4: 9.6pt;
+  --ds-space-5: 14.4pt;
+  --ds-space-6: 19.2pt;
+  --ds-space-7: 28.8pt;
+  --ds-space-8: 38.4pt;
+  --ds-space-9: 57.6pt;
+  --ds-figurine-size: 9mm;
+  --ds-tag-size: 7pt;
+}
+
+@media print {
+  :root {
+    --ds-display-size: 96pt;
+    --ds-headline-size: 40pt;
+    --ds-accent-size: 0.94em;
+    --ds-title-size: 32pt;
+    --ds-quote-size: 20pt;
+    --ds-intro-size: 18pt;
+    --ds-heading-size: 16pt;
+    --ds-subtitle-size: 12pt;
+    --ds-action-size: 10pt;
+    --ds-text-size: 9.5pt;
+    --ds-caption-size: 8pt;
+    --ds-label-size: 7.5pt;
+    --ds-numeral-size: 48pt;
+    --ds-space-1: 2.4pt;
+    --ds-space-2: 4.8pt;
+    --ds-space-3: 7.2pt;
+    --ds-space-4: 9.6pt;
+    --ds-space-5: 14.4pt;
+    --ds-space-6: 19.2pt;
+    --ds-space-7: 28.8pt;
+    --ds-space-8: 38.4pt;
+    --ds-space-9: 57.6pt;
+    --ds-figurine-size: 9mm;
+    --ds-tag-size: 7pt;
+  }
+}
